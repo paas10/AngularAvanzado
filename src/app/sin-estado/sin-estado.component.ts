@@ -1,11 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Producto } from '../interfaces/producto';
 
 @Component({
   selector: 'app-sin-estado',
   templateUrl: './sin-estado.component.html',
   styleUrls: ['./sin-estado.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SinEstadoComponent implements OnInit {
 
@@ -28,7 +27,6 @@ export class SinEstadoComponent implements OnInit {
   }
 
   isDisabled() {
-    console.log(this.producto.titulo)
     return !!this.disabled;
   }
 
