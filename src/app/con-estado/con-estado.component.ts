@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AlertaConfirmacionComponent } from '../alerta-confirmacion/alerta-confirmacion.component';
 import { Producto } from '../interfaces/producto';
 import { Tienda } from '../models/tienda.model';
 
@@ -8,7 +9,8 @@ import { Tienda } from '../models/tienda.model';
   styleUrls: ['./con-estado.component.css']
 })
 export class ConEstadoComponent implements OnInit {
-
+  @ViewChild(AlertaConfirmacionComponent, { static: false })
+  alertChild: AlertaConfirmacionComponent = new AlertaConfirmacionComponent;
 
   modeloTienda: Tienda = new Tienda();
   itemsComprados: Array<Producto> = [];
@@ -34,6 +36,8 @@ export class ConEstadoComponent implements OnInit {
     } else return ''
   }
 
-  
+  realizarPago() {
+    this.alertChild.mostrar();
+  }
 
 }

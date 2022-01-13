@@ -29,7 +29,7 @@
             <div class="is is-one-quarter">
               <h2 class="title">Total {{ getPrecioTotal() | currency : 'Q' }}</h2>
             </div>
-            <button class="button is-link is-pulled-right is-danger">
+            <button class="button is-link is-pulled-right is-danger" (click)="realizarPago()">
               BUY NOW
             </button>
           </div>
